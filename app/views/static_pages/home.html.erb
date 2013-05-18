@@ -1,0 +1,15 @@
+<div class="center hero-unit">
+  <h1><%= t("index.Welcome_to_Tule_BBS")%></h1>
+
+  <h2>
+    <%= t("index.This_is_a_very_fun_place")%>
+  </h2>
+  <% if signed_in? %>
+  	<%= link_to "进入论坛", postlist_path, class: "btn btn-large btn-primary" %>
+    
+  <% else %>
+  	<%= link_to "登录", signin_path, class: "btn btn-large btn-primary" %>
+    没有帐号？快来
+  	<%= link_to "注册!", signup_path, class: "btn btn-large btn-primary" %>
+  <% end %>
+</div>

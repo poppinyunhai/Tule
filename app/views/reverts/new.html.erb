@@ -1,0 +1,15 @@
+<% provide(:title, 'Sign up') %>
+<h1>Sign up</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@revert), :url => post_reverts_path(@post) do |r| %>
+      <%= r.label :revertc %>
+      <%= r.text_area :revertc %>
+      <%= r.submit "Create my account", 
+      class: "btn btn-large btn-primary" %>
+    <% end %>
+    <%= current_user.id%>
+    <%= @post.id%>
+  </div>
+</div>

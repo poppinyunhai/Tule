@@ -1,0 +1,13 @@
+<% provide(:title) %>
+<h1><%= t("revert.title")%></h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for@revert, :url => post_reverts_path(@post) do |r| %>
+      <%= r.label :revertc, t("post.Content")%>
+      <%= r.text_area :revertc %>
+      <%= r.submit t("revert.reverts"), 
+      class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

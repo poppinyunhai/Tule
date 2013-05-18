@@ -1,0 +1,19 @@
+<% provide(:title, "Sign in") %>
+<h1><%= t("index.login")%></h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(:session, url: sessions_path) do |f| %>
+
+      <%= f.label :email, t("user.email") %>
+      <%= f.text_field :email %>
+
+      <%= f.label :password, t("user.password")%>
+      <%= f.password_field :password %>
+
+      <%= f.submit t("index.login"), class: "btn btn-large btn-primary" %>
+    <% end %>
+
+    <p><%= t("user.unuser")%> ?<%= link_to(t("index.Sign"), signup_path)%></p>
+  </div>
+</div>

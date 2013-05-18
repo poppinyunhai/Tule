@@ -1,0 +1,15 @@
+<% provide(:title) %>
+<h1><%= t("post.new")%></h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@post) do |p| %>
+      <%= p.label :title, t("post.title")%>
+      <%= p.text_field :title %>
+      <%= p.label :content, t("post.Content")%>
+      <%= p.text_area :content %>
+      <%= p.submit t("post.new"), 
+      class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

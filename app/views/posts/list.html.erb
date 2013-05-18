@@ -1,0 +1,18 @@
+<h1 ><%= t("index.Post_list")%></h1>
+<p style="padding-left: 93%">
+ 	<%= link_to(t("post.new_post"), new_post_path, 
+ 	class: "btn btn-large btn-primary") %>
+</p>
+<div>
+	<ul>
+		<% @post.each do |post| %>
+			<table class="table table-hover " style= "font-size:35px">
+ 				<td> <%= link_to post.title, :controller => 'posts', :action => 'show', :id => post %>
+ 				</td> 
+			</table>
+		<% end %>
+	</ul>
+</div>
+<div class="center">
+	<%= paginate @post %>
+</div>
