@@ -1,11 +1,15 @@
 BbsApp::Application.routes.draw do  
-  resources :users
-  #resources :posts
-  #resources :reverts
+  #resources :messages
+  #resources :users
   resources :sessions, only: [:new, :create, :destroy]
-
+  resources :nodes do 
+    resources :posts, :controller => 'node_posts'
+  end
   resources :posts do
-    resources :reverts, :controller => 'post_reverts'
+    resources :reverts, :controller => 'post_reverts' 
+  end
+  resources :users do 
+    resources :messages, :controller => 'user_messages'
   end
   root to: 'static_pages#home'
   match '/signup',  to: 'users#new'
@@ -14,9 +18,9 @@ BbsApp::Application.routes.draw do
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
-  match '/postlist', to: 'posts#list'
-  match '/postshow', to: 'posts#show'
-  match '/postcreate', to: 'posts#new'
+  match '/postdestroy', to: 'posts#destroy'
+
+
   
 
 

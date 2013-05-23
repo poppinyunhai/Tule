@@ -5,7 +5,7 @@
     <%= t("index.This_is_a_very_fun_place")%>
   </h2>
   <% if signed_in? %>
-  	<%= link_to "进入论坛", postlist_path, class: "btn btn-large btn-primary" %>
+  	<%= link_to "进入论坛", posts_path, class: "btn btn-large btn-primary" %>
     
   <% else %>
   	<%= link_to "登录", signin_path, class: "btn btn-large btn-primary" %>

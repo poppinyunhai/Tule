@@ -1,0 +1,23 @@
+<h1 ><%= t("index.Post_list")%></h1>
+<ul class="breadcrumb">
+    <li><%= link_to 'Home', posts_path%></li>
+</ul>
+<div>
+	<ul>
+		<% @post.each do |post| %>
+			<legend>
+ 				<%= link_to post.title, post_path(post) %>
+ 				<% if current_user.admin? %>
+ 				<%= link_to 'Delete',postdestroy_path(post)%>
+ 				<% end %>
+			</legend>
+		<% end %>
+	</ul>
+</div>
+<div class="center">
+	<%= paginate @post %>
+</div>
+<p>
+ 	<%= link_to(t("post.new_post"), new_post_path, 
+ 	class: "btn btn-large btn-primary") %>
+</p>

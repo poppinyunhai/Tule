@@ -1,3 +1,8 @@
+<h1><%= @post.title%></h1>
+<ul class="breadcrumb">
+    <li><%= link_to 'Home/ ', posts_path%></li>
+    <li><%= link_to @node.name, node_posts_path(@node.id)%></li>
+</ul>
 <div >
 	<table class="table-bordered">
 		<td   class = "row">
@@ -7,12 +12,16 @@
 			</p>
 			<p style="padding-top 80px"> 
 				<%= t("post.Content")%>
-				<%= @post.content%></p>
+				<%= @post.content%>
+			</p>
+			<p>
+				<%= image_tag @post.avatar.url %>  
+			</p>	
 		</td>
 	</table>
 </div>
-<% @revert.each do |revert| %>
-<div >
+<div style='padding-top: 40px'>
+	<% @revert.each do |revert| %>
 	<table class="table-bordered">
 		<td   class = "row">
 			<p class = "span12">
@@ -23,10 +32,15 @@
 				<%= t("post.user_name")%>:
 				<%= revert.user.name%>
 			</p>
+			-------------------
+			<p>
+			<%= link_to t("user.message"), new_user_message_path(revert.user.id)%>
+			</p>
 		</td>
 	</table>
+	<% end %>
 </div>
-<% end %>
+
 <%= link_to(t("revert.reverts"), 
 	new_post_revert_path(@post), 
 	class: "btn btn-large btn-primary") %>

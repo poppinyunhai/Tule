@@ -29,6 +29,7 @@ zh-TW:
     passwordre: 重复密码
     login: 登录
     unuser: 没有用户名
+    message: 私信
     
   date:
     abbr_day_names:

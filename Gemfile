@@ -48,3 +48,4 @@ gem 'therubyracer'
 :x
 gem "kaminari"
 gem 'rails-i18n'
+gem "paperclip", "~> 2.8.0"

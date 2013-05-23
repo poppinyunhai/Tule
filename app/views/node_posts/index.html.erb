@@ -1,0 +1,11 @@
+<h1>帖子列表</h1>
+<ul class="breadcrumb">
+    <li><%= link_to 'Home/', root_path%></li>
+    <li><%= link_to @node.name%></li>
+</ul>
+<% @post.each do |post| %>
+			<table class="table table-hover " style= "font-size:35px">
+ 				<td> <%= link_to post.title, post_path(post) %>
+ 				</td> 
+			</table>
+<% end %>

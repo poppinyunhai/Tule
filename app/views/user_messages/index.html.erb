@@ -1,0 +1,25 @@
+<h1><%= t('user.message')%></h1>
+<% @message.each do |m| %>
+<div >
+	<table class="table-bordered">
+		<td   class = "row">
+			<p class = "span12">
+				<%= t("post.title")%>:
+				<%= m.title%>
+			</p>
+			<p style="padding-top 80px">
+				<%= t("post.Content")%>:
+				<%= m.content%>
+			</p>
+			<p style="padding-top 80px">
+				<%= t("post.user_name")%>:
+				<%= m.user.name%>
+			</p>
+			------------------------
+			<p>
+			<%= link_to t('user.message'), new_user_message_path(m.user.id)%>
+			</p>
+		</td>
+	</table>
+</div>
+<% end %>

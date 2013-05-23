@@ -1,0 +1,14 @@
+main ID   <%= @user.name%>
+send ID   <%= current_user.id%>
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for @message, :url => user_messages_path do |r| %>
+      <%= r.label :title, t("post.title")%>
+      <%= r.text_field :title %>
+      <%= r.label :content, t("post.Content")%>
+      <%= r.text_area :content %>
+      <%= r.submit t("revert.reverts"), 
+      class: "btn btn-large btn-primary" %>
+    <%end%>
+  </div>
+</div>

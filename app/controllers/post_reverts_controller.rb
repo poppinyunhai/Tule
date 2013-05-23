@@ -8,7 +8,7 @@ class PostRevertsController < ApplicationController
 		@revert = Revert.create(:revertc => params[:revert][:revertc], 
 			:user_id => current_user.id, :post_id => @post.id)
 		if @revert.save
-			redirect_to postshow_path(:id => @post.id)
+			redirect_to post_path(:id => @post.id)
 		else
 			render 'new'
 		end
