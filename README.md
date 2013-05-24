@@ -19,7 +19,7 @@
 私信：message，用户之间实现私信的发送，发送人:user_id从session中获取
 
 
-然后根据所咬回复人发表的帖子获得收件人的ID，从而实现私信的发送。
+然后根据所回复人发表的帖子获得收件人的ID，从而实现私信的发送。
 
 
 管理论坛：user表用户添加栏位admin设置初始值，为false,然后更新管理员的user.admin为true，然后判断user.admin是否为true如果为true可以进行删除帖子的操作。
