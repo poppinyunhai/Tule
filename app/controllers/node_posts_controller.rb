@@ -1,5 +1,5 @@
 class NodePostsController < ApplicationController
-	before_filter :find_node
+  before_filter :find_node
 	def index
 		@post = Post.where(:node_id => @node.id)	
 		
